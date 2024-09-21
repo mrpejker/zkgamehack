@@ -1,0 +1,31 @@
+.game {
+    text-align: center;
+  }
+  
+  .mole-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+  }
+  
+  .mole {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .mole img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mole-up img {
+    display: block;
+  }
+  
+  .mole img {
+    display: none;
+  }

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "globalEnv": [
+    "PROTOKIT_LOG_LEVEL",
+    "PROTOKIT_BLOCK_INTERVAL",
+    "PROTOKIT_GRAPHQL_HOST",
+    "PROTOKIT_GRAPHQL_PORT",
+    "PROTOKIT_GRAPHIQL_ENABLED",
+    "NEXT_PUBLIC_PROTOKIT_GRAPHQL_URL",
+    "PROTOKIT_ENV_FOLDER"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
